@@ -32,14 +32,26 @@
       </div> -->
     </div>
     <!-- 左侧的菜单 -->
-    <div class="banner"></div>
+    <div class="banner">
+      <div class="swiper-container" id="swiper1">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="../assets/image/banner.png" alt="" srcset=""></div>
+          <div class="swiper-slide"><img src="../assets/image/banner1.png" alt="" srcset=""></div>
+          <div class="swiper-slide"><img src="../assets/image/banner2.png" alt="" srcset=""></div>
+          <div class="swiper-slide"><img src="../assets/image/banner3.png" alt="" srcset=""></div>
+        </div>
+        <div class="swiper-pagination"></div><!--分页器。如果放置在swiper-container外面，需要自定义样式。-->
+      </div>
+    </div>
+    <!-- 回到顶部 -->
+    <div class="scroll-top" @click="$refs.read.scrollTop=0"><img src="../assets/image/scroll.png" alt="" srcset=""></div>
     <div class="content-box">
       <div class="center-box">
-          <div class="contain-box" v-for="(iteam,index) in contentData" :key="index">
+          <div class="contain-box" v-for="(iteam,index) in $myData" :key="index">
               <div class="tit">{{iteam.tit}}</div>
               <div class="imgmessage" >
                   <div class="imgcontent" v-for="(item,index) in iteam.list" :key="index" @click="godetail(item)">
-                      <img src="" alt="" srcset="">
+                      <img :src="item.img">
                       <div class="titmsg">{{item.name}}</div>
                       <div class="detail">{{item.detail}}</div>
                       <div class="code">扫码查看</div>
@@ -58,13 +70,14 @@
 
 <script>
 // @ is an alias to /src
-let contentData = require('./conten.json')
+import Swiper from "swiper"
 export default {
   name: "layout",
   data() {
     return {
       scrollhigh: 718,
       scrollhight:0,
+      mySwiper:null,
       dialogFormVisible:false,
       ruleForm:{
           name:"",
@@ -139,18 +152,46 @@ export default {
     };
   },
   mounted() {
+    this.initswiper()
       this.$refs.read.addEventListener("scroll",this.godecltion)
   },
   created(){
-   this.contentData=contentData
+   
+  //  contentData.forEach((iteam,index)=>{
+  //    iteam.list.forEach((item,index)=>{
+  //      item.img=require(item.img)
+  //    })
+  //  })
+  console.log(this.$myData)
+  //  this.contentData=contentData
   },
   methods: {
     godetail(row){
         window.open(row.urlw)
     },
+    initswiper(){
+      this.mySwiper = new Swiper('#swiper1', {
+          autoplay: {
+            delay: 5000,
+            stopOnLastSlide: false,
+            disableOnInteraction: true,
+          },
+          loop : true,
+          effect : 'fade',
+          fadeEffect: {
+            crossFade: true,
+          },
+          pagination: {
+          el: '.swiper-pagination',
+          type: 'bullets',
+          //type: 'fraction',
+          //type : 'progressbar',
+          //type : 'custom',
+        },
+        })
+    },
     scrollEvent(e) {
         let num=e.srcElement.scrollTop
-        console.log(contentData)
         if(num>1300&&num<2500){
             this.scrollhight=1
         }else if(num>2500&&num<3100){
@@ -246,9 +287,16 @@ export default {
   .banner {
     width: 100%;
     height: 592px;
-    background: #36BAFF;
-    background: url("../assets/image/banner.png") no-repeat;
-    background-size: contain;
+    // border: 1px solid red;
+    // background: #36BAFF;
+    // background: url("../assets/image/banner.png") no-repeat;
+    // background-size: contain;
+  }
+  .scroll-top{
+    position: fixed;
+    right: 100px;
+    bottom: 0px;
+    cursor: pointer;
   }
   .foot{
       width: 100%;

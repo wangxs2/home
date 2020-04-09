@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import layout from '../views/layout.vue'
+import ssvg from "../components/svganmation.vue"
 Vue.use(VueRouter)
 
   const routes = [
@@ -9,6 +10,11 @@ Vue.use(VueRouter)
     path: '/',
     name: 'layout',
     component: layout
+  },
+  {
+    path: '/ssvg',
+    name: 'ssvg',
+    component: ssvg
   },
   {
     path: '/about',
