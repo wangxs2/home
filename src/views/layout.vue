@@ -1,11 +1,35 @@
 <template>
-  <div class="layout" id="read" @scroll="scrollEvent">
+  <div class="layout" id="read" ref="read" @scroll="scrollEvent">
+      <!-- 添加行业种类 -->
+      <el-dialog title="添加行业种类"  :visible.sync="dialogFormVisible">
+        <el-form :model="ruleForm" :rules="rules" ref="ruleForm">
+            <el-form-item label="行业名称" label-width="100px" prop="name">
+              <el-input v-model="ruleForm.name" autocomplete="off"></el-input>
+            </el-form-item>
+            <el-form-item label="图片地址1" label-width="100px" prop="srcurl1">
+              <el-input v-model="ruleForm.srcurl1" autocomplete="off"></el-input>
+            </el-form-item>
+            <el-form-item label="图片地址2" label-width="100px" prop="srcurl2">
+              <el-input v-model="ruleForm.srcurl2" autocomplete="off"></el-input>
+            </el-form-item>
+        </el-form>
+        <div slot="footer" class="dialog-footer">
+            <el-button @click="dialogFormVisible = false">取 消</el-button>
+            <el-button type="primary" @click="submitForm('ruleForm')">确 定</el-button>
+        </div>
+        </el-dialog>
       <!-- 左侧的菜单 -->
     <div class="menu-list" :style="{'top':scrollhigh + 'px'}">
-      <div class="iteam-menu" v-for="iteam in meauData" :key="iteam.id">
-        <img src alt srcset />
-        <span>{{iteam.name}}</span>
+      <div class="iteam-menu" v-for="(iteam,index) in meauData" :key="index" @click="godecltion(index)">
+        
+        <img v-if="scrollhight==index" :src="iteam.imgaf" />
+        <img v-else :src="iteam.imgbf" />
+        <span :class="scrollhight==index?'scfont':''" style="margin-top:6px">{{iteam.name}}</span>
       </div>
+      <!-- <div class="iteam-menu" @click="dialogFormVisible=true">
+        <img src />
+        <span>添加</span>
+      </div> -->
     </div>
     <!-- 左侧的菜单 -->
     <div class="banner"></div>
@@ -14,11 +38,11 @@
           <div class="contain-box" v-for="(iteam,index) in contentData" :key="index">
               <div class="tit">{{iteam.tit}}</div>
               <div class="imgmessage" >
-                  <div class="imgcontent" v-for="(item,index) in iteam.list" :key="index">
+                  <div class="imgcontent" v-for="(item,index) in iteam.list" :key="index" @click="godetail(item)">
                       <img src="" alt="" srcset="">
                       <div class="titmsg">{{item.name}}</div>
                       <div class="detail">{{item.detail}}</div>
-                      <div class="code">扫码下载</div>
+                      <div class="code">扫码查看</div>
                   </div>
               </div>
           </div>
@@ -40,58 +64,176 @@ export default {
   data() {
     return {
       scrollhigh: 718,
+      scrollhight:0,
+      dialogFormVisible:false,
+      ruleForm:{
+          name:"",
+          srcurl1:"",
+          srcurl2:"",
+          region:""
+      },
+      rules:{
+          name: [
+            { required: true, message: '请输入行业名称', trigger: 'blur' },
+          ],
+          srcurl1:[
+            { required: true, message: '请输入图片地址', trigger: 'blur' },
+          ],
+          srcurl2:[
+            { required: true, message: '请输入图片地址', trigger: 'blur' },
+          ],
+      },
       contentData:[],
       meauData: [
         {
-          id: 1,
-          name: "公交行业"
-          //   imgbf:require(""),
-          //   imgaf:require(""),
+          name: "公交行业",
+          imgbf:require("../assets/image/icon_1_nor@3x.png"),
+          imgaf:require("../assets/image/icon_1_pre@3x.png"),
         },
         {
-          id: 2,
-          name: "位置服务"
+          name: "位置服务",
+          imgbf:require("../assets/image/icon_2_nor@3x.png"),
+          imgaf:require("../assets/image/icon_2_pre@3x.png"),
         },
         {
-          id: 3,
-          name: "灯联网"
+          name: "灯联网",
+          imgbf:require("../assets/image/icon_3_nor@3x.png"),
+          imgaf:require("../assets/image/icon_3_pre@3x.png"),
         },
         {
-          id: 4,
-          name: "水文平台"
+          name: "水文平台",
+          imgbf:require("../assets/image/icon_4_nor@3x.png"),
+          imgaf:require("../assets/image/icon_4_pre@3x.png"),
         },
         {
-          id: 5,
-          name: "汽修系统"
+          name: "汽修系统",
+          imgbf:require("../assets/image/icon_7_nor@3x.png"),
+          imgaf:require("../assets/image/icon_7_pre@3x.png"),
         },
         {
-          id: 6,
-          name: "医疗行业"
+          name: "医疗行业",
+          imgbf:require("../assets/image/icon_7_nor@3x.png"),
+          imgaf:require("../assets/image/icon_7_pre@3x.png"),
         },
         {
-          id: 7,
-          name: "春运保障"
+          name: "春运保障",
+          imgbf:require("../assets/image/icon_7_nor@3x.png"),
+          imgaf:require("../assets/image/icon_7_pre@3x.png"),
         },
         {
-          id: 8,
-          name: "其他"
+          name: "建德",
+          imgbf:require("../assets/image/icon_9_nor@3x.png"),
+          imgaf:require("../assets/image/icon_9_pre@3x.png"),
+        },
+        {
+          name: "公益",
+          imgbf:require("../assets/image/icon_10_nor@3x.png"),
+          imgaf:require("../assets/image/icon_10_pre@3x.png"),
+        },
+        {
+          name: "其他",
+          imgbf:require("../assets/image/icon_8_nor@3x.png"),
+          imgaf:require("../assets/image/icon_8_pre@3x.png"),
         }
       ]
     };
   },
   mounted() {
+      this.$refs.read.addEventListener("scroll",this.godecltion)
   },
   created(){
-   console.log(contentData)
    this.contentData=contentData
   },
   methods: {
+    godetail(row){
+        window.open(row.urlw)
+    },
     scrollEvent(e) {
+        let num=e.srcElement.scrollTop
+        console.log(contentData)
+        if(num>1300&&num<2500){
+            this.scrollhight=1
+        }else if(num>2500&&num<3100){
+            this.scrollhight=2
+        }else if(num>3100&&num<3700){
+            this.scrollhight=3
+        }else if(num>3700&&num<4300){
+            this.scrollhight=4
+        }else if(num>4300&&num<4700){
+            this.scrollhight=5
+        }else if(num>4400&&num<5100){
+            this.scrollhight=6
+        }else if(num>5100&&num<5500){
+            this.scrollhight=7
+        }else if(num<1300){
+            this.scrollhight=0
+        }else if(num>5500&&num<6000){
+            this.scrollhight=8
+        }else if(num>6000){
+            this.scrollhight=9
+        }
       this.scrollhigh = 718 - e.srcElement.scrollTop;
       if(this.scrollhigh<126){
           this.scrollhigh=126
       }
-    }
+    },
+    //去到指定的位置
+    godecltion(index){
+        switch(index) {
+            case 0:
+               this.$refs.read.scrollTop=592
+                break;
+            case 1:
+                this.$refs.read.scrollTop=2100
+                break;
+            case 2:
+                this.$refs.read.scrollTop=3000
+                break;
+            case 3:
+                this.$refs.read.scrollTop=3600
+                break;
+            case 4:
+                this.$refs.read.scrollTop=4100
+                break;
+            case 5:
+                this.$refs.read.scrollTop=4500
+                break;
+            case 6:
+                this.$refs.read.scrollTop=5000
+                break;
+            case 7:
+                this.$refs.read.scrollTop=5200
+                break;
+            default:
+                
+        } 
+    },
+    //添加行业种类
+    emptyform(){
+      this.ruleForm ={
+         name:"",
+          srcurl1:"",
+          srcurl2:"",
+      }
+    },
+    submitForm(formName) {
+        this.$refs[formName].validate((valid) => {
+          if (valid) {
+            this.$message({
+            message: '添加成功',
+            type: 'success'
+            });
+            this.meauData.push(this.ruleForm)
+            this.dialogFormVisible=false
+            this.emptyform()
+          } else {
+             this.$message({
+                message: '完善信息',
+                type: 'warning'
+                });
+          }
+        });
+      },
   }
 };
 </script>
@@ -105,6 +247,8 @@ export default {
     width: 100%;
     height: 592px;
     background: #36BAFF;
+    background: url("../assets/image/banner.png") no-repeat;
+    background-size: contain;
   }
   .foot{
       width: 100%;
@@ -198,17 +342,22 @@ export default {
     background: rgba(255, 255, 255, 1);
     box-shadow: 0px 0px 6px 0px rgba(51, 51, 51, 0.16);
     border-radius: 4px;
+    width: 72px;
     .iteam-menu {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       box-sizing: border-box;
-      padding: 24px 10px;
+      padding: 14px 0px;
       cursor: pointer;
+      .scfont{
+          color:#208CFF;
+          font-size: 14px;
+      }
       img {
-        width: 22px;
-        height: 22px;
+        width: 24px;
+        height: 24px;
       }
       span {
         color: #8c8c8c;
