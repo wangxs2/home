@@ -6,6 +6,8 @@ import ElementUI from 'element-ui';
 import contentData from "./conten.js"
 import 'element-ui/lib/theme-chalk/index.css';
 import '_swiper@5.3.6@swiper/css/swiper.css';
+import animated from 'animate.css'
+Vue.use(animated)
 Vue.config.productionTip = false
 Vue.use(ElementUI);
 Vue.use(contentData);

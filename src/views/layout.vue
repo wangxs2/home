@@ -37,7 +37,23 @@
         <div class="swiper-wrapper">
           <div class="swiper-slide"><img src="../assets/image/banner.png" alt="" srcset=""></div>
           <div class="swiper-slide"><img src="../assets/image/banner1.png" alt="" srcset=""></div>
-          <div class="swiper-slide"><img src="../assets/image/banner2.png" alt="" srcset=""></div>
+          <div class="swiper-slide">
+            <div class="positioning">
+              <div class="font-left" >
+                <div class="top-font ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.5s">北斗导航打造位置服务产业链</div>
+                <div class="b-ft ani" swiper-animate-effect="bounceInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+                  <span class="bottom-font">北斗定位技术</span>
+                  <span class="bottom-line"></span>
+                  <span class="bottom-font">硬盘保护技术</span>
+                  <span class="bottom-line"></span>
+                  <span class="bottom-font">断电保护技术</span>
+                </div>
+              </div>
+              <div class="svg-right ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="0.5s">
+                <svganmation></svganmation>
+              </div>
+            </div>
+          </div>
           <div class="swiper-slide"><img src="../assets/image/banner3.png" alt="" srcset=""></div>
         </div>
         <div class="swiper-pagination"></div><!--分页器。如果放置在swiper-container外面，需要自定义样式。-->
@@ -71,8 +87,12 @@
 <script>
 // @ is an alias to /src
 import Swiper from "swiper"
+import svganmation from '@/components/svganmation.vue'
 export default {
   name: "layout",
+  components: {
+    svganmation
+  },
   data() {
     return {
       scrollhigh: 718,
@@ -182,12 +202,22 @@ export default {
             crossFade: true,
           },
           pagination: {
-          el: '.swiper-pagination',
-          type: 'bullets',
-          //type: 'fraction',
-          //type : 'progressbar',
-          //type : 'custom',
-        },
+            el: '.swiper-pagination',
+            type: 'bullets',
+            //type: 'fraction',
+            //type : 'progressbar',
+            //type : 'custom',
+          },
+           on:{
+            init: function(){
+              swiperAnimateCache(this); //隐藏动画元素 
+              swiperAnimate(this); //初始化完成开始动画
+            }, 
+            slideChangeTransitionEnd: function(){ 
+              swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+              //this.slides.eq(this.activeIndex).find('.ani').removeClass('ani'); 动画只展现一次，去除ani类名
+            } 
+          }
         })
     },
     scrollEvent(e) {
@@ -291,6 +321,57 @@ export default {
     // background: #36BAFF;
     // background: url("../assets/image/banner.png") no-repeat;
     // background-size: contain;
+    .positioning{
+      width: 100%;
+      height: 592px;
+      background: url("../assets/image/banner21.png") no-repeat;
+      background-size: 100% 100%;
+      display: flex;
+      justify-content: space-between;
+      .font-left{
+        width: 50%;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        
+        .top-font{
+          color: #ffffff;
+          text-align: left;
+          font-size: 46px;
+          letter-spacing:4px;
+          margin-bottom: 44px;
+          box-sizing: border-box;
+          padding-left: 240px;
+          font-family:"微软雅黑";
+        }
+        .b-ft{
+          text-align: left;
+          display: flex;
+          align-items: center;
+          box-sizing: border-box;
+          padding-left: 240px;
+        }
+        .bottom-font{
+          color: #eeeeee;
+          font-family:"微软雅黑";
+          letter-spacing:4px;
+          font-size: 22px;
+        }
+        .bottom-line{
+          display: inline-block;
+          width: 3px;
+          height: 22px;
+          background: #eeeeee;
+          margin: 10px;
+        }
+      }
+      .svg-right{
+        flex: 1;
+        text-align: left;
+      }
+    }
   }
   .scroll-top{
     position: fixed;
@@ -383,7 +464,7 @@ export default {
   }
   .menu-list {
     position: fixed;
-    left: 100px;
+    left: 90px;
     top: 718px;
     display: flex;
     flex-direction: column;
