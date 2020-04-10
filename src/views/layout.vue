@@ -1,6 +1,24 @@
 <template>
   <div class="layout" id="read" ref="read" @scroll="scrollEvent">
-      <!-- 添加行业种类 -->
+    <!-- <vue-particles
+      color="#dedede"
+      :particleOpacity="0.7"
+      :particlesNumber="80"
+      shapeType="star"
+      :particleSize="4"
+      linesColor="#fff"
+      :linesWidth="2"
+      :lineLinked="true"
+      :lineOpacity="0.4"
+      :linesDistance="150"
+      :moveSpeed="3"
+      :hoverEffect="true"
+      hoverMode="grab"
+      :clickEffect="true"
+      clickMode="push"
+      class="cash"
+    ></vue-particles> -->
+      <!-- 添加行业种类
       <el-dialog title="添加行业种类"  :visible.sync="dialogFormVisible">
         <el-form :model="ruleForm" :rules="rules" ref="ruleForm">
             <el-form-item label="行业名称" label-width="100px" prop="name">
@@ -119,27 +137,32 @@ export default {
       contentData:[],
       meauData: [
         {
-          name: "公交行业",
+          name: "智慧公交",
           imgbf:require("../assets/image/icon_1_nor@3x.png"),
           imgaf:require("../assets/image/icon_1_pre@3x.png"),
         },
         {
-          name: "位置服务",
+          name: "共享单车",
           imgbf:require("../assets/image/icon_2_nor@3x.png"),
           imgaf:require("../assets/image/icon_2_pre@3x.png"),
         },
         {
-          name: "灯联网",
+          name: "位置服务",
           imgbf:require("../assets/image/icon_3_nor@3x.png"),
           imgaf:require("../assets/image/icon_3_pre@3x.png"),
         },
         {
-          name: "水文平台",
+          name: "可视化平台",
           imgbf:require("../assets/image/icon_4_nor@3x.png"),
           imgaf:require("../assets/image/icon_4_pre@3x.png"),
         },
         {
-          name: "汽修系统",
+          name: "智慧灯联网",
+          imgbf:require("../assets/image/icon_7_nor@3x.png"),
+          imgaf:require("../assets/image/icon_7_pre@3x.png"),
+        },
+        {
+          name: "智慧环境",
           imgbf:require("../assets/image/icon_7_nor@3x.png"),
           imgaf:require("../assets/image/icon_7_pre@3x.png"),
         },
@@ -149,17 +172,12 @@ export default {
           imgaf:require("../assets/image/icon_7_pre@3x.png"),
         },
         {
-          name: "春运保障",
-          imgbf:require("../assets/image/icon_7_nor@3x.png"),
-          imgaf:require("../assets/image/icon_7_pre@3x.png"),
-        },
-        {
-          name: "建德",
+          name: "智慧建德",
           imgbf:require("../assets/image/icon_9_nor@3x.png"),
           imgaf:require("../assets/image/icon_9_pre@3x.png"),
         },
         {
-          name: "公益",
+          name: "云逆行",
           imgbf:require("../assets/image/icon_10_nor@3x.png"),
           imgaf:require("../assets/image/icon_10_pre@3x.png"),
         },
@@ -182,7 +200,6 @@ export default {
   //      item.img=require(item.img)
   //    })
   //  })
-  console.log(this.$myData)
   //  this.contentData=contentData
   },
   methods: {
@@ -258,10 +275,10 @@ export default {
                 this.$refs.read.scrollTop=2100
                 break;
             case 2:
-                this.$refs.read.scrollTop=3000
+                this.$refs.read.scrollTop=2600
                 break;
             case 3:
-                this.$refs.read.scrollTop=3600
+                this.$refs.read.scrollTop=3400
                 break;
             case 4:
                 this.$refs.read.scrollTop=4100
@@ -273,7 +290,13 @@ export default {
                 this.$refs.read.scrollTop=5000
                 break;
             case 7:
-                this.$refs.read.scrollTop=5200
+                this.$refs.read.scrollTop=5400
+                break;
+            case 8:
+                this.$refs.read.scrollTop=5800
+                break;
+            case 9:
+                this.$refs.read.scrollTop=6400
                 break;
             default:
                 
@@ -314,6 +337,13 @@ export default {
   height: 100%;
   overflow-y: scroll;
   background: #F7F6FD;
+  position: relative;
+  .cash {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
   .banner {
     width: 100%;
     height: 592px;
