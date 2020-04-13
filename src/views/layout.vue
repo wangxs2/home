@@ -187,13 +187,13 @@ export default {
         },
         {
           name: "智慧灯联网",
-          imgbf: require("../assets/image/icon_7_nor@3x.png"),
-          imgaf: require("../assets/image/icon_7_pre@3x.png")
+          imgbf: require("../assets/image/icon_5_nor@3x.png"),
+          imgaf: require("../assets/image/icon_5_pre@3x.png")
         },
         {
           name: "智慧环境",
-          imgbf: require("../assets/image/icon_7_nor@3x.png"),
-          imgaf: require("../assets/image/icon_7_pre@3x.png")
+          imgbf: require("../assets/image/icon_6_nor@3x.png"),
+          imgaf: require("../assets/image/icon_6_pre@3x.png")
         },
         {
           name: "医疗行业",
@@ -202,18 +202,18 @@ export default {
         },
         {
           name: "智慧建德",
+          imgbf: require("../assets/image/icon_8_nor@3x.png"),
+          imgaf: require("../assets/image/icon_8_pre@3x.png")
+        },
+        {
+          name: "云逆行",
           imgbf: require("../assets/image/icon_9_nor@3x.png"),
           imgaf: require("../assets/image/icon_9_pre@3x.png")
         },
         {
-          name: "云逆行",
+          name: "其他",
           imgbf: require("../assets/image/icon_10_nor@3x.png"),
           imgaf: require("../assets/image/icon_10_pre@3x.png")
-        },
-        {
-          name: "其他",
-          imgbf: require("../assets/image/icon_8_nor@3x.png"),
-          imgaf: require("../assets/image/icon_8_pre@3x.png")
         }
       ]
     };
