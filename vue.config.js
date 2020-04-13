@@ -8,6 +8,7 @@ const webpack = require('webpack')
 module.exports = {
   lintOnSave: false,
   publicPath: './', // 部署项目路径
+  outputDir: `dist-${process.env.NODE_ENV}`,
   devServer: {
     port: 8086, // 端口号
     open: false, //配置自动启动浏览器
