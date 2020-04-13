@@ -10,7 +10,7 @@ export default {
                         "img": require("./assets/image-1/image_1_1@2x.png"),
                         "urlw": "http://114.80.231.178:18080/newEbusMonitor/",
                         "urln": "http://114.80.231.178:18080/newEbusMonitor/",
-                        "detail": "新一代支持多维信息发布的公交信息发布系统",
+                        "detail": "公交前台监控",
                         "isapp": true
                     },
                     {
@@ -18,7 +18,7 @@ export default {
                         "img": require("./assets/image-1/image_1_2@2x.png"),
                         "urlw": "http://114.80.231.178:18080/ebusManage/",
                         "urln": "http://114.80.231.178:18080/ebusManage/",
-                        "detail": "电子站牌后台管理系统",
+                        "detail": "公交后台配置",
                         "isapp": true
                     },
                     {
@@ -26,7 +26,7 @@ export default {
                         "urlw": "http://101.231.47.117:20100/newEbusMonitor",
                         "urln": "http://10.1.30.205:20100/newEbusMonitor",
                         "img": require("./assets/image-1/image_1_10@2x.png"),
-                        "detail": "安装可追溯  故障可跟踪  维修可查询",
+                        "detail": "誉益前台监控",
                         "isapp": true
                     },
                     {
@@ -34,7 +34,7 @@ export default {
                         "urlw": "http://101.231.47.117:20100/ebusManage",
                         "urln": "http://10.1.30.205:20100/ebusManage",
                         "img": require("./assets/image-1/image_1_11@2x.png"),
-                        "detail": "地图展示、数据分析、配置管理、公交公司、公交线路、公交站点、设备类型、…",
+                        "detail": "誉益后台配置",
                         "isapp": true
                     },
                     {
@@ -42,7 +42,7 @@ export default {
                         "img": require("./assets/image-1/image_1_3@2x.png"),
                         "urlw": "http://114.80.231.178:18080/BusScreen",
                         "urln": "http://114.80.231.178:18080/BusScreen",
-                        "detail": "智能化的灯片生成系统，降低打印错误率，减少人工成本",
+                        "detail": "LED公交导乘",
                         "isapp": true
                     },
                     {
@@ -180,7 +180,7 @@ export default {
                         "urlw": "http://180.167.88.154:38888/busparkmonitor/login",
                         "urln": "http://180.167.88.154:38888/busparkmonitor/login",
                         "img": require("./assets/image-2/img5.png"),
-                        "detail": "监控中心，配置管理，系统管理，统计报表，系统发布设置",
+                        "detail": "泊位信息管理系统",
                         "isapp": true
                     },
                     {
@@ -188,7 +188,7 @@ export default {
                         "urlw": "http://114.80.231.178:18888/smartbracelet/#!/user/login",
                         "urln": "http://114.80.231.178:18888/smartbracelet/#!/user/login",
                         "img": require("./assets/image-2/img6.png"),
-                        "detail": "浦东新区公交基金优化线网项目补贴计算系统",
+                        "detail": "手环定位前台",
                         "isapp": true
                     },
                     {
@@ -196,7 +196,7 @@ export default {
                         "urlw": "http://114.80.231.178:10080/#!/user/login",
                         "urln": "http://114.80.231.178:10080/#!/user/login",
                         "img": require("./assets/image-2/img7.png"),
-                        "detail": "智能化的灯片生成系统,降低打印错误率，减少人工成本",
+                        "detail": "手环定位后台",
                         "isapp": true
                     },
                     {
@@ -307,7 +307,7 @@ export default {
                         "urlw": "http://101.231.47.117:50045/monitor",
                         "urln": "http://10.1.30.207:50045/monitor/",
                         "img": require("./assets/image-2/img16.png"),
-                        "detail": "车辆分别，权限管理，围栏监督，监控报警，数据大盘",
+                        "detail": "水质采样服务系统",
                         "isapp": true
                     },
                     {
