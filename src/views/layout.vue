@@ -1,42 +1,5 @@
 <template>
   <div class="layout" id="read" ref="read" @scroll="scrollEvent">
-    <!-- <vue-particles
-      color="#dedede"
-      :particleOpacity="0.7"
-      :particlesNumber="80"
-      shapeType="star"
-      :particleSize="4"
-      linesColor="#fff"
-      :linesWidth="2"
-      :lineLinked="true"
-      :lineOpacity="0.4"
-      :linesDistance="150"
-      :moveSpeed="3"
-      :hoverEffect="true"
-      hoverMode="grab"
-      :clickEffect="true"
-      clickMode="push"
-      class="cash"
-    ></vue-particles>-->
-    <!-- 添加行业种类
-      <el-dialog title="添加行业种类"  :visible.sync="dialogFormVisible">
-        <el-form :model="ruleForm" :rules="rules" ref="ruleForm">
-            <el-form-item label="行业名称" label-width="100px" prop="name">
-              <el-input v-model="ruleForm.name" autocomplete="off"></el-input>
-            </el-form-item>
-            <el-form-item label="图片地址1" label-width="100px" prop="srcurl1">
-              <el-input v-model="ruleForm.srcurl1" autocomplete="off"></el-input>
-            </el-form-item>
-            <el-form-item label="图片地址2" label-width="100px" prop="srcurl2">
-              <el-input v-model="ruleForm.srcurl2" autocomplete="off"></el-input>
-            </el-form-item>
-        </el-form>
-        <div slot="footer" class="dialog-footer">
-            <el-button @click="dialogFormVisible = false">取 消</el-button>
-            <el-button type="primary" @click="submitForm('ruleForm')">确 定</el-button>
-        </div>
-        </el-dialog>
-    <!-- 左侧的菜单-->
     <div class="menu-list" :style="{'top':scrollhigh + 'px'}">
       <div
         class="iteam-menu"
@@ -57,13 +20,13 @@
     <div class="banner">
       <div class="swiper-container" id="swiper1">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="../assets/image/banner.png" alt srcset />
+          <div class="swiper-slide swiper-slide1">
+            <!-- <img src="../assets/image/banner.png" alt srcset /> -->
           </div>
-          <div class="swiper-slide">
-            <img src="../assets/image/banner1.png" alt srcset />
+          <div class="swiper-slide swiper-slide2">
+            <!-- <img src="../assets/image/banner1.png" alt srcset /> -->
           </div>
-          <div class="swiper-slide">
+          <div class="swiper-slide swiper-slide3">
             <div class="positioning">
               <div class="font-left">
                 <div
@@ -93,8 +56,8 @@
               </div>
             </div>
           </div>
-          <div class="swiper-slide">
-            <img src="../assets/image/banner3.png" alt srcset />
+          <div class="swiper-slide swiper-slide4">
+            <!-- <img src="../assets/image/banner3.png" alt srcset /> -->
           </div>
         </div>
         <div class="swiper-pagination"></div>
@@ -145,6 +108,7 @@ export default {
   data() {
     return {
       scrollhigh: 718,
+      ip:'',
       scrollhight: 0,
       mySwiper: null,
       dialogFormVisible: false,
@@ -223,7 +187,8 @@ export default {
     this.$refs.read.addEventListener("scroll", this.godecltion);
   },
   created() {
-    console.log(process.env.VUE_APP_PAGE_URL);
+    console.log(returnCitySN["cip"]);
+    console.log(returnCitySN["cname"]);
     if (process.env.VUE_APP_PAGE_URL == "http://106.14.198.128") {
       this.isn = 1;
     } else {
@@ -239,9 +204,9 @@ export default {
   methods: {
     godetail(row) {
       if (process.env.VUE_APP_PAGE_URL == "http://106.14.198.128") {
-        window.open(row.urln)
+        window.open(row.urln);
       } else {
-        window.open(row.urlw)
+        window.open(row.urlw);
       }
     },
     initswiper() {
@@ -383,74 +348,104 @@ export default {
   }
   .banner {
     width: 100%;
-    height: 592px;
-    // border: 1px solid red;
-    // background: #36BAFF;
-    // background: url("../assets/image/banner.png") no-repeat;
-    // background-size: contain;
-    .positioning {
+    height: vh(592);
+    .swiper-container {
       width: 100%;
-      height: 592px;
-      background: url("../assets/image/banner21.png") no-repeat;
-      background-size: 100% 100%;
-      display: flex;
-      justify-content: space-between;
-      .font-left {
-        width: 50%;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-end;
+      height: 100%;
+      .swiper-wrapper {
+        width: 100%;
+        height: 100%;
+        .swiper-slide {
+          width: 100%;
+          height: 100%;
+          .positioning {
+            width: 100%;
+            height: vh(592);
+            background: url("../assets/image/banner21.png") no-repeat;
+            background-size: 100% 100%;
+            display: flex;
+            justify-content: space-between;
+            .font-left {
+              width: 50%;
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: flex-end;
 
-        .top-font {
-          color: #ffffff;
-          text-align: left;
-          font-size: 46px;
-          letter-spacing: 4px;
-          margin-bottom: 44px;
-          box-sizing: border-box;
-          padding-left: 240px;
-          font-family: "微软雅黑";
+              .top-font {
+                color: #ffffff;
+                text-align: left;
+                font-size: vw(46);
+                letter-spacing: vw(4);
+                margin-bottom: vh(44);
+                box-sizing: border-box;
+                padding-left: vw(240);
+                font-family: "微软雅黑";
+              }
+              .b-ft {
+                text-align: left;
+                display: flex;
+                align-items: center;
+                box-sizing: border-box;
+                padding-left: vw(240);
+              }
+              .bottom-font {
+                color: #eeeeee;
+                font-family: "微软雅黑";
+                letter-spacing: vw(4);
+                font-size: vw(22);
+              }
+              .bottom-line {
+                display: inline-block;
+                width: vw(3);
+                height: vh(22);
+                background: #eeeeee;
+                margin: vw(10);
+              }
+            }
+            .svg-right {
+              flex: 1;
+              text-align: left;
+            }
+          }
+          // img{
+          //   width: 100%;
+          //   height: vh(592);
+          // }
         }
-        .b-ft {
-          text-align: left;
-          display: flex;
-          align-items: center;
-          box-sizing: border-box;
-          padding-left: 240px;
+        .swiper-slide1 {
+          width: 100%;
+          height: vh(592);
+          background: url("../assets/image/banner.png");
+          background-size: contain;
         }
-        .bottom-font {
-          color: #eeeeee;
-          font-family: "微软雅黑";
-          letter-spacing: 4px;
-          font-size: 22px;
+        .swiper-slide2 {
+          width: 100%;
+          height: vh(592);
+          background: url("../assets/image/banner1.png");
+          background-size: contain;
         }
-        .bottom-line {
-          display: inline-block;
-          width: 3px;
-          height: 22px;
-          background: #eeeeee;
-          margin: 10px;
+        .swiper-slide4 {
+          width: 100%;
+          height: vh(592);
+          background: url("../assets/image/banner3.png");
+          background-size: contain;
         }
-      }
-      .svg-right {
-        flex: 1;
-        text-align: left;
       }
     }
   }
   .scroll-top {
     position: fixed;
-    right: 100px;
+    right: vw(100);
     bottom: 0px;
     cursor: pointer;
   }
   .foot {
     width: 100%;
-    height: 237px;
+    height: vh(237);
     background: #262626;
-    font-size: 12px;
+    font-size: vw(12);
     color: #ffffff;
     display: flex;
     flex-direction: column;
@@ -462,15 +457,15 @@ export default {
     // height: 100%;
     display: flex;
     justify-content: center;
-    margin-bottom: 80px;
+    margin-bottom: vh(80);
     .center-box {
-      width: 1200px;
+      width: vw(1200);
       .contain-box {
         display: flex;
         flex-direction: column;
-        margin-top: 58px;
+        margin-top: vh(58);
         .tit {
-          font-size: 28px;
+          font-size: vw(28);
           color: #208cff;
         }
         .imgmessage {
@@ -478,41 +473,41 @@ export default {
           flex-wrap: wrap;
 
           .imgcontent {
-            width: 280px;
-            height: 330px;
+            width: vw(280);
+            height: vh(330);
             background: rgba(255, 255, 255, 1);
-            border-radius: 12px;
+            border-radius: vw(12);
             cursor: pointer;
-            margin-right: 26px;
-            margin-top: 35px;
+            margin-right: vw(26);
+            margin-top: vh(35);
             display: flex;
             flex-direction: column;
             text-align: left;
             overflow: hidden;
             img {
               width: 100%;
-              height: 210px;
+              height: vh(210);
             }
             .titmsg {
               font-size: 18px;
               color: #333333;
               box-sizing: border-box;
-              padding-left: 15px;
-              margin: 10px 0;
+              padding-left: vw(15);
+              margin: vw(10) 0;
             }
             .detail {
               width: 100%;
-              height: 35px;
-              font-size: 14px;
+              height: vh(35);
+              font-size: vw(14);
               color: #595959;
               box-sizing: border-box;
-              padding-left: 15px;
+              padding-left: vw(15);
             }
             .code {
-              margin-top: 12px;
+              margin-top: vh(12);
               box-sizing: border-box;
-              padding-left: 15px;
-              font-size: 14px;
+              padding-left: vw(15);
+              font-size: vw(14);
               color: #8c8c8c;
             }
           }
@@ -525,7 +520,7 @@ export default {
           }
           .imgcontent:hover {
             box-shadow: 0px 0px 12px 0px rgba(51, 51, 51, 0.3);
-            margin-top: 27px;
+            margin-top: vh(27);
           }
         }
       }
@@ -534,33 +529,33 @@ export default {
   }
   .menu-list {
     position: fixed;
-    left: 90px;
-    top: 718px;
+    left: vw(90);
+    top: vh(718);
     display: flex;
     flex-direction: column;
     background: rgba(255, 255, 255, 1);
     box-shadow: 0px 0px 6px 0px rgba(51, 51, 51, 0.16);
-    border-radius: 4px;
-    width: 72px;
+    border-radius: vw(4);
+    width: vw(72);
     .iteam-menu {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       box-sizing: border-box;
-      padding: 14px 0px;
+      padding: vw(14) 0px;
       cursor: pointer;
       .scfont {
         color: #208cff;
-        font-size: 14px;
+        font-size: vw(14);
       }
       img {
-        width: 24px;
-        height: 24px;
+        width: vw(24);
+        height: vw(24);
       }
       span {
         color: #8c8c8c;
-        font-size: 13px;
+        font-size: vw(13);
       }
     }
   }

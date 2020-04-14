@@ -454,6 +454,14 @@ export default {
                         "detail": "客户拜访",
                         "isapp": true
                     },
+                    {
+                        "name": "可回收物收运系统",
+                        "img": require("./assets/image-2/img32.png"),
+                        "urlw": "http://weixin.xdhb01.top:8080/login",
+                        "urln": "http://weixin.xdhb01.top:8080/login",
+                        "detail": "可回收物收运系统",
+                        "isapp": true
+                    },
                    
                 ]
             }

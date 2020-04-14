@@ -1,0 +1,57 @@
+$vm_base:1920;
+$vh_base:1080;
+// $vm_base: 13440;
+// $vh_base: 4320;
+// 计算vw
+@function vw($px) {
+  @return ($px / $vm_base) * 100vw;
+}
+// 计算vh
+@function vh($px) {
+  @return ($px / $vh_base) * 100vh;
+}
+// 针对于图片来说的
+@mixin vw2($style,$px) {
+  [data-theme='default'] & {
+    #{$style}: vw($px)
+  }
+  
+  [data-theme='bigFull'] & {
+    #{$style}: vw($px * 2)
+  }
+}
+@mixin vh2($style,$px) {
+  [data-theme='default'] & {
+    #{$style}: vh($px)
+  }
+  
+  [data-theme='bigFull'] & {
+    #{$style}: vh($px * 2)
+  }
+}
+// 针对于border来说的
+@mixin vw3($style,$px) {
+  [data-theme='default'] & {
+    #{$style}: vw($px)
+  }
+  
+  [data-theme='bigFull'] & {
+    #{$style}: vw($px * 4)
+  }
+}
+
+//计算rem
+@function vm($px) {
+  @return ($px /1920)*10;
+}
+
+
+// 动画
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
