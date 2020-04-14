@@ -187,23 +187,10 @@ export default {
     this.$refs.read.addEventListener("scroll", this.godecltion);
   },
   created() {
-    console.log(returnCitySN["cip"]);
-    console.log(returnCitySN["cname"]);
-    if (process.env.VUE_APP_PAGE_URL == "http://106.14.198.128") {
-      this.isn = 1;
-    } else {
-      this.isn = 2;
-    }
-    //  contentData.forEach((iteam,index)=>{
-    //    iteam.list.forEach((item,index)=>{
-    //      item.img=require(item.img)
-    //    })
-    //  })
-    //  this.contentData=contentData
   },
   methods: {
     godetail(row) {
-      if (process.env.VUE_APP_PAGE_URL == "http://106.14.198.128") {
+      if (window.location.href == "http://10.1.30.202:8080/#/") {
         window.open(row.urln);
       } else {
         window.open(row.urlw);
