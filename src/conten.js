@@ -102,14 +102,7 @@ export default {
                         "detail": "电子站牌统计",
                         "isapp": true
                     },
-                    {
-                        "name": "公交大脑",
-                        "urlw": "http://101.231.47.117:50045/bs101New",
-                        "urln": "http://10.1.30.207:50045/bs207New",
-                        "img": require("./assets/image-1/image_1_13@2x.png"),
-                        "detail": "公交大数据服务管理平台",
-                        "isapp": true
-                    },
+                   
                     {
                         "name": "公交集调系统",
                         "urlw": "http://114.80.178.12:9088",
@@ -229,11 +222,27 @@ export default {
                 "tit": "可视化平台",
                 "list": [
                     {
-                        "name": "公交可视化",
+                        "name": "公交大脑",
+                        "urlw": "http://101.231.47.117:50045/bs101New",
+                        "urln": "http://10.1.30.207:50045/bs207New",
+                        "img": require("./assets/image-1/image_1_13@2x.png"),
+                        "detail": "公交大数据服务管理平台",
+                        "isapp": true
+                    },
+                    {
+                        "name": "客运可视化",
                         "urlw": "http://101.231.47.116:50081/busVisual",
                         "urln": "http://10.1.30.210:50081/busVisual",
                         "img": require("./assets/image-1/image_1_17@2x.png"),
-                        "detail": "公交可视化",
+                        "detail": "客运可视化",
+                        "isapp": true
+                    },
+                    {
+                        "name": "客运可视化后台管理系统",
+                        "urlw": "http://101.231.47.116:50081/busPlat",
+                        "urln": "http://10.1.30.210:50081/busPlat",
+                        "img": require("./assets/image-2/img33.png"),
+                        "detail": "客运可视化后台管理系统",
                         "isapp": true
                     },
                     {
@@ -253,11 +262,27 @@ export default {
                         "isapp": true
                     },
                     {
+                        "name": "汽修可视化后台管理系统",
+                        "urlw": "http://114.80.231.180:8088/repairSystem",
+                        "urln": "http://114.80.231.180:8088/repairSystem",
+                        "img": require("./assets/image-2/img34.png"),
+                        "detail": "汽修可视化后台管理系统",
+                        "isapp": true
+                    },
+                    {
                         "name": "春运可视化平台",
                         "img": require("./assets/image-2/img12.png"),
                         "urlw": "http://101.231.47.117:50045/webSpringfestival",
                         "urln": "http://10.1.30.207:50045/webSpringfestival",
                         "detail": "春运可视化平台",
+                        "isapp": true
+                    },
+                    {
+                        "name": "春运统计",
+                        "img": require("./assets/image-2/img13.png"),
+                        "urlw": "http://101.231.47.117:50067/SpringFestivalData",
+                        "urln": "http://10.1.30.208:50067/SpringFestivalData",
+                        "detail": "春运统计",
                         "isapp": true
                     },
                     {
@@ -268,14 +293,7 @@ export default {
                         "detail": "对接多个公交业务系统,动态数据分析, 多样化展示",
                         "isapp": true
                     },
-                    {
-                        "name": "公交大脑春运统计",
-                        "img": require("./assets/image-2/img13.png"),
-                        "urlw": "http://101.231.47.117:50067/SpringFestivalData",
-                        "urln": "http://10.1.30.208:50067/SpringFestivalData",
-                        "detail": "公交大脑春运统计",
-                        "isapp": true
-                    }
+                    
                 ]
             },
             {

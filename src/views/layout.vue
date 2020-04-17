@@ -189,6 +189,7 @@ export default {
   created() {
   },
   methods: {
+    //判断要访问的地址是内网还是外网的
     godetail(row) {
       if (window.location.href == "http://10.1.30.202:8080/#/") {
         window.open(row.urln);
@@ -471,6 +472,10 @@ export default {
             flex-direction: column;
             text-align: left;
             overflow: hidden;
+            transition:margin-top 0.6s;
+            -moz-transition:margin-top 0.6s; /* Firefox 4 */
+            -webkit-transition:margin-top 0.6s; /* Safari and Chrome */
+            -o-transition:margin-top 0.6s; /* Opera */
             img {
               width: 100%;
               height: vh(210);
