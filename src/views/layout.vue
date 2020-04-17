@@ -230,6 +230,7 @@ export default {
     },
     scrollEvent(e) {
       let num = e.srcElement.scrollTop;
+      console.log(num)
       if (num > 1300 && num < 2500) {
         this.scrollhight = 1;
       } else if (num > 2500 && num < 3100) {
@@ -260,13 +261,13 @@ export default {
     godecltion(index) {
       switch (index) {
         case 0:
-          this.$refs.read.scrollTop = 592;
+          this.$refs.read.scrollTop = 552;
           break;
         case 1:
-          this.$refs.read.scrollTop = 2100;
+          this.$refs.read.scrollTop = 1700;
           break;
         case 2:
-          this.$refs.read.scrollTop = 2600;
+          this.$refs.read.scrollTop = 1800;
           break;
         case 3:
           this.$refs.read.scrollTop = 3400;
