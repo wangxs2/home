@@ -108,7 +108,7 @@ export default {
   data() {
     return {
       scrollhigh: 718,
-      ip:'',
+      ip: "",
       scrollhight: 0,
       mySwiper: null,
       dialogFormVisible: false,
@@ -187,8 +187,23 @@ export default {
     this.$refs.read.addEventListener("scroll", this.godecltion);
   },
   created() {
+   this.getdhuju()
   },
   methods: {
+    //获取数据
+    getdhuju(){
+       this.$axios
+        .get("http://10.1.30.202:8080/DownloadAddress/AddressInfor/getLink")
+        .then(response => {
+          // 请求成功
+          let res = response.data;
+          console.log(res);
+        })
+        .catch(error => {
+          // 请求失败，
+          console.log(error);
+        });
+    },
     //判断要访问的地址是内网还是外网的
     godetail(row) {
       if (window.location.href == "http://10.1.30.202:8080/#/") {
@@ -230,7 +245,7 @@ export default {
     },
     scrollEvent(e) {
       let num = e.srcElement.scrollTop;
-      console.log(num)
+      console.log(num);
       if (num > 1300 && num < 2500) {
         this.scrollhight = 1;
       } else if (num > 2500 && num < 3100) {
@@ -473,10 +488,10 @@ export default {
             flex-direction: column;
             text-align: left;
             overflow: hidden;
-            transition:margin-top 0.6s;
-            -moz-transition:margin-top 0.6s; /* Firefox 4 */
-            -webkit-transition:margin-top 0.6s; /* Safari and Chrome */
-            -o-transition:margin-top 0.6s; /* Opera */
+            transition: margin-top 0.6s;
+            -moz-transition: margin-top 0.6s; /* Firefox 4 */
+            -webkit-transition: margin-top 0.6s; /* Safari and Chrome */
+            -o-transition: margin-top 0.6s; /* Opera */
             img {
               width: 100%;
               height: vh(210);

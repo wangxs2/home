@@ -62,9 +62,9 @@ export default {
                         "isapp": true
                     },
                     {
-                        "name": "浦东公交服务云系统",
-                        "urlw": "http://wx.58752222.com/BusCloud",
-                        "urln": "http://wx.58752222.com/BusCloud",
+                        "name": "浦东新区公交设施投诉处置智评系统",
+                        "urlw": "http://101.231.47.117:50045/BusCloud/",
+                        "urln": "http://10.1.30.207:50045/BusCloud/",
                         "img": require("./assets/image-1/image_1_5@2x.png"),
                         "detail": "市民提供投诉建议，为公交监管人员提供监管服务，促进公交企业更好发展",
                         "isapp": true
@@ -72,7 +72,7 @@ export default {
                     {
                         "name": "站点采集系统",
                         "urlw": "http://106.14.188.44:8080/visit",
-                        "urln": "http://10.1.30.205:20100/passengerflow/",
+                        "urln": "http://106.14.188.44:8080/visit",
                         "img": require("./assets/image-1/image_1_7@2x.png"),
                         "detail": "地图展示、数据分析、配置管理、公交公司、公交线路、公交站点、设备类型、…",
                         "isapp": true
@@ -255,16 +255,16 @@ export default {
                     },
                     {
                         "name": "汽修可视化平台",
-                        "urlw": "http://114.80.231.180:8088/newVehiclerepair/#/",
-                        "urln": "http://114.80.231.180:8088/newVehiclerepair/#/",
+                        "urlw": "http://180.167.126.120:81/newVehiclerepair/",
+                        "urln": "http://180.167.126.120:81/newVehiclerepair/",
                         "img": require("./assets/image-2/img11.png"),
                         "detail": "汽修可视化平台",
                         "isapp": true
                     },
                     {
                         "name": "汽修可视化后台管理系统",
-                        "urlw": "http://114.80.231.180:8088/repairSystem",
-                        "urln": "http://114.80.231.180:8088/repairSystem",
+                        "urlw": "http://180.167.126.120:81/repairSystem/",
+                        "urln": "http://180.167.126.120:81/repairSystem/",
                         "img": require("./assets/image-2/img34.png"),
                         "detail": "汽修可视化后台管理系统",
                         "isapp": true
@@ -331,7 +331,7 @@ export default {
                     {
                         "name": "智慧水情",
                         "img": require("./assets/image-2/img17.png"),
-                        "urlw": "http://10.1.30.210:50081/wh/#/",
+                        "urlw": "http://101.231.47.116:50081/wh",
                         "urln": "http://10.1.30.210:50081/wh/#/",
                         "detail": "智慧水情",
                         "isapp": true
@@ -339,16 +339,16 @@ export default {
                     {
                         "name": "北蔡噪音监控屏幕配置",
                         "img": require("./assets/image-2/img18.png"),
-                        "urlw": "http://220.248.3.42:4070/noisewatchsoket/#/",
-                        "urln": "http://220.248.3.42:4070/noisewatchsoket/#/",
+                        "urlw": "http://223.167.111.180:4070/noisewatchsoket/#/",
+                        "urln": "http://223.167.111.180:4070/noisewatchsoket/#/",
                         "detail": "北蔡噪音监控屏幕配置",
                         "isapp": true
                     },
                     {
                         "name": "康桥噪音监控屏幕配置",
                         "img": require("./assets/image-2/img19.png"),
-                        "urlw": "http://220.248.104.194:4070/noisewatchsoket/#/",
-                        "urln": "http://220.248.104.194:4070/noisewatchsoket/#/",
+                        "urlw": "http://220.248.104.196:4070/noisewatchsoket/#/",
+                        "urln": "http://220.248.104.196:4070/noisewatchsoket/#/",
                         "detail": "康桥噪音监控屏幕配置",
                         "isapp": true
                     }
@@ -477,6 +477,14 @@ export default {
                         "img": require("./assets/image-2/img32.png"),
                         "urlw": "http://weixin.xdhb01.top:8080/login",
                         "urln": "http://weixin.xdhb01.top:8080/login",
+                        "detail": "可回收物收运系统",
+                        "isapp": true
+                    },
+                    {
+                        "name": "PaaS管理平台",
+                        "img": require("./assets/image-1/image_1_9@2x.png"),
+                        "urlw": "http://180.167.126.126:8018",
+                        "urln": "http://180.167.126.126:8018",
                         "detail": "可回收物收运系统",
                         "isapp": true
                     },
