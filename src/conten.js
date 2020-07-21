@@ -6,23 +6,23 @@ export default {
                 "tit": "智慧公交",
                 "list": [
                     {
-                        "name": "公交前台监控",
+                        "name": "公交电子站牌前台监控",
                         "img": require("./assets/image-1/image_1_1@2x.png"),
                         "urlw": "http://114.80.231.178:18080/newEbusMonitor/",
                         "urln": "http://114.80.231.178:18080/newEbusMonitor/",
-                        "detail": "公交前台监控",
+                        "detail": "太阳能公交电子站牌前台监控系统",
                         "isapp": true
                     },
                     {
-                        "name": "公交后台配置",
+                        "name": "公交电子站牌后台配置",
                         "img": require("./assets/image-1/image_1_2@2x.png"),
                         "urlw": "http://114.80.231.178:18080/ebusManage/",
                         "urln": "http://114.80.231.178:18080/ebusManage/",
-                        "detail": "公交后台配置",
+                        "detail": "太阳能公交电子站牌后台管理系统",
                         "isapp": true
                     },
                     {
-                        "name": "誉益前台监控",
+                        "name": "誉益电子站牌前台监控",
                         "urlw": "http://101.231.47.117:20100/newEbusMonitor",
                         "urln": "http://10.1.30.205:20100/newEbusMonitor",
                         "img": require("./assets/image-1/image_1_10@2x.png"),
@@ -30,7 +30,7 @@ export default {
                         "isapp": true
                     },
                     {
-                        "name": "誉益后台配置",
+                        "name": "誉益电子站牌后台配置",
                         "urlw": "http://101.231.47.117:20100/ebusManage",
                         "urln": "http://10.1.30.205:20100/ebusManage",
                         "img": require("./assets/image-1/image_1_11@2x.png"),
@@ -71,8 +71,8 @@ export default {
                     },
                     {
                         "name": "站点采集系统",
-                        "urlw": "http://106.14.188.44:8080/visit",
-                        "urln": "http://106.14.188.44:8080/visit",
+                        "urlw": "http://114.80.231.178:40003/visit/",
+                        "urln": "http://114.80.231.178:40003/visit/",
                         "img": require("./assets/image-1/image_1_7@2x.png"),
                         "detail": "地图展示、数据分析、配置管理、公交公司、公交线路、公交站点、设备类型、…",
                         "isapp": true
@@ -156,6 +156,14 @@ export default {
                         "urln": "http://106.14.198.128:18091/login",
                         "img": require("./assets/image-2/img4.png"),
                         "detail": "车辆分类，权限管理，围栏监督，监控报警，数据大盘",
+                        "isapp": true
+                    },
+                    {
+                        "name": "合肥共享单车",
+                        "urlw": "http://114.80.231.178:40004/hefview/#/",
+                        "urln": "http://114.80.231.178:40004/hefview/#/",
+                        "img": require("./assets/image-2/img2.png"),
+                        "detail": "",
                         "isapp": true
                     },
                   
@@ -270,6 +278,14 @@ export default {
                         "isapp": true
                     },
                     {
+                        "name": "汽修app",
+                        "urlw": "http://180.167.126.120:81/supervise",
+                        "urln": "http://180.167.126.120:81/supervise",
+                        "img": require("./assets/image-2/img34.png"),
+                        "detail": "汽修app",
+                        "isapp": true
+                    },
+                    {
                         "name": "春运可视化平台",
                         "img": require("./assets/image-2/img12.png"),
                         "urlw": "http://101.231.47.117:50045/webSpringfestival",
@@ -293,6 +309,23 @@ export default {
                         "detail": "对接多个公交业务系统,动态数据分析, 多样化展示",
                         "isapp": true
                     },
+                    {
+                        "name": "停车可视化",
+                        "urlw": "http://101.231.47.116:50081/parkingView/#/",
+                        "urln": "http://10.1.30.210:50081/parkingView/#/",
+                        "img": require("./assets/image-1/image_1_12@2x.png"),
+                        "detail": "",
+                        "isapp": true
+                    },
+                    {
+                        "name": "智慧三林公共设施管理平台",
+                        "urlw": "http://101.231.47.117:50020/slPlatform/#/newsl",
+                        "urln": "http://10.1.30.204:50020/slPlatform/#/newsl",
+                        "img": require("./assets/image-3/image_3_7@2x.png"),
+                        "detail": "",
+                        "isapp": true
+                    },
+                   
                     
                 ]
             },
@@ -350,6 +383,14 @@ export default {
                         "urlw": "http://220.248.104.196:4070/noisewatchsoket/#/",
                         "urln": "http://220.248.104.196:4070/noisewatchsoket/#/",
                         "detail": "康桥噪音监控屏幕配置",
+                        "isapp": true
+                    },
+                    {
+                        "name": "噪音设备在线状态监管",
+                        "img": require("./assets/image-2/img19.png"),
+                        "urlw": "http://101.231.47.116:18889/noiseView/#/login?redirect=%2Fnoise%2Fscreen",
+                        "urln": "http://10.1.30.211:18889/noiseview/#/login?redirect=%2Fnoise%2Fscreen",
+                        "detail": "噪音设备在线状态监管",
                         "isapp": true
                     }
                 ]
@@ -485,7 +526,23 @@ export default {
                         "img": require("./assets/image-1/image_1_9@2x.png"),
                         "urlw": "http://180.167.126.126:8018",
                         "urln": "http://180.167.126.126:8018",
-                        "detail": "可回收物收运系统",
+                        "detail": "",
+                        "isapp": true
+                    },
+                    {
+                        "name": "NAS",
+                        "img": require("./assets/image-1/image_1_12@2x.png"),
+                        "urlw": "http://101.231.47.117:5000/",
+                        "urln": "http://10.1.30.158:5000/",
+                        "detail": "",
+                        "isapp": true
+                    },
+                    {
+                        "name": "一委一界面",
+                        "img": require("./assets/image-1/image_1_12@2x.png"),
+                        "urlw": "http://58.33.37.26:11185/#/",
+                        "urln": "http://58.33.37.26:11185/#/",
+                        "detail": "",
                         "isapp": true
                     },
                    
